@@ -12,6 +12,6 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'inventoryManager';
-  role='Admin';
+  role=' q';
 }
  
