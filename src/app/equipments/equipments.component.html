@@ -1,0 +1,50 @@
+<p>equipments works!</p>
+<h1>This the the equipment component</h1>
+<!-- {{equiList|json}} -->
+<h1>{{equipments.total_equip}}</h1>
+
+<!-- to manipulate the dom we the syntax property binding: -->
+
+<!-- no need to acces the element as document.getElementById('blabla').innerText=company-->
+<!-- <three types of binding -->
+    <!-- 1.Property Binding
+    2.Interpolation
+    3.Event Binding  -->
+ 
+    <!-- 1.Property Binding -->
+    The name of the company is as follows
+    <div *ngIf="equipments.total_equip > 0">
+        Welcome to {{companyName}}
+        <h1>Rooms List</h1>
+        <table>
+        <tr>
+            <th>index</th>
+            <th>EquipmentID</th>
+            <th>Description</th>
+            <th>Name</th>
+            <th>Current Holder Id</th>
+            <th>Status</th>
+            <th>Usage History</th>
+        </tr>
+        <tr 
+        [ngClass]="e?'even':'odd'"
+        *ngFor="let obj of equiList |slice : 1:2;let e=even;let o=odd;  let i=index">
+        <td>{{i}}</td>
+         <td>{{obj.EqId}}</td>
+         <td>{{obj.Desc}}</td>
+         <td>{{obj.Name}}</td>
+         <td>{{obj.CurrHoldId}}</td>
+         <td>{{obj.Status}}</td>
+         <td>{{obj.UsageHistory}}</td>
+        </tr>
+    </table>
+    </div>
+  
+<div [innerText]="companyName"></div>
+
+        
+<!-- how to let user interact with the front end  -->
+<!-- by event binding -->
+
+
+<button (click)="toggle()">Click me</button>
